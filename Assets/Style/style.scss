@@ -1,0 +1,58 @@
+/* Default CSS Rules */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;;
+}
+
+/* Variables Declaretion */
+
+
+/* Start header section */
+
+.header-container{
+
+  .title-container{
+    display: flex;
+    justify-content: center;
+    padding: 3% 5%;
+    .title{
+
+    }
+  }
+}
+
+.counter-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .buttons-container{
+    display: flex;
+    justify-content: center;
+    margin: 3% 5%;
+
+    .plus-button{
+      cursor: pointer;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .minus-button{
+      cursor: pointer;
+      margin: 20px;
+      padding: 20px;
+    }
+  }
+
+  .reset-button-container{
+    .reset-button{
+      cursor: pointer;
+      padding: 25px;
+    }
+  }
+}
+
+/* End header section */
+
