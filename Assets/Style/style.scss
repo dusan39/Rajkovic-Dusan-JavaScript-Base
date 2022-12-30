@@ -3,7 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-color: lightblue;
 }
 
 /* Variables Declaretion */
@@ -17,16 +21,20 @@
     display: flex;
     justify-content: center;
     padding: 3% 5%;
-    .title{
-
-    }
   }
 }
 
+/* End header section */
+
+/* Start of counter section */
 .counter-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .counter-display{
+    font-size: 35px;
+  }
 
   .buttons-container{
     display: flex;
@@ -53,6 +61,4 @@
     }
   }
 }
-
-/* End header section */
-
+/* End of counter section */
