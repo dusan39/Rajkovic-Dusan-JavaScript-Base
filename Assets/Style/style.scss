@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Sofia Sans', sans-serif;
 }
 
 body{
-  background-color: lightblue;
+
 }
 
 /* Variables Declaretion */
@@ -16,10 +16,13 @@ body{
 /* Start header section */
 
 .header-container{
+  background-color: black;
+  color: white;
 
   .title-container{
     display: flex;
     justify-content: center;
+    text-align: center;
     padding: 3% 5%;
   }
 }
@@ -31,6 +34,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   .counter-display{
     font-size: 35px;
@@ -40,17 +44,35 @@ body{
     display: flex;
     justify-content: center;
     margin: 3% 5%;
+    padding-top: 5%;
 
-    .plus-button{
-      cursor: pointer;
-      margin: 20px;
-      padding: 20px;
+    .counter-display{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      color: white;
+      padding-left: 15%;
+      padding-right: 15%;
     }
 
+    .plus-button,
     .minus-button{
       cursor: pointer;
       margin: 20px;
       padding: 20px;
+      font-size: 30px;
+      border-radius: 5px;
+      background-color: rgb(52, 110, 173);
+      border: solid 1px white;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    .plus-button:hover,
+    .minus-button:hover{
+      color: rgb(52, 110, 173);
+      background-color: white;
     }
   }
 
@@ -58,7 +80,20 @@ body{
     .reset-button{
       cursor: pointer;
       padding: 25px;
+      width: 250px;
+      font-size: 20px;
+      border-radius: 5px;
+      background-color: rgb(173, 52, 52);
+      border: none;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    .reset-button:hover{
+      color: rgb(173, 52, 52);
+      background-color: white;
     }
   }
 }
+  
 /* End of counter section */
