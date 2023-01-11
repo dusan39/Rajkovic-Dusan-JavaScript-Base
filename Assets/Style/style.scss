@@ -73,6 +73,7 @@ body{
     .minus-button:hover{
       color: rgb(52, 110, 173);
       background-color: white;
+      border: solid 1px rgb(52, 110, 173);
     }
   }
 
@@ -90,8 +91,14 @@ body{
     }
 
     .reset-button:hover{
+      transform: scale(1.1);
+    }
+
+    .reset-button:active{
       color: rgb(173, 52, 52);
       background-color: white;
+      border: solid 1px rgb(173, 52, 52);
+      transition: 0.1s;
     }
   }
 }

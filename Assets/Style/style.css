@@ -61,6 +61,7 @@
 .counter-container .buttons-container .minus-button:hover {
   color: rgb(52, 110, 173);
   background-color: white;
+  border: solid 1px rgb(52, 110, 173);
 }
 .counter-container .reset-button-container .reset-button {
   cursor: pointer;
@@ -74,8 +75,13 @@
   transition: all 0.3s;
 }
 .counter-container .reset-button-container .reset-button:hover {
+  transform: scale(1.1);
+}
+.counter-container .reset-button-container .reset-button:active {
   color: rgb(173, 52, 52);
   background-color: white;
+  border: solid 1px rgb(173, 52, 52);
+  transition: 0.1s;
 }
 
 /* End of counter section *//*# sourceMappingURL=style.css.map */
