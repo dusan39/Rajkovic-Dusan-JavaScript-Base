@@ -1,43 +1,53 @@
-/*if sul click dei bottoni 
-3 case
+let plusButton = document.querySelector('.plus-button');
+let minusButton = document.querySelector('.minus-button');
+let resetButton = document.querySelector('.reset-button');
+let numberDisplay = document.querySelector('.counter-display');
+let i = 0;
 
-1 = +
-i++ 
-innerhtml
-break
+function plus(){
+  i++;
+  numberDisplay.innerHTML = i;
+}
 
-2 = -
-i--
-innerhtml
-break
+function minus(){
+    i--;
+    numberDisplay.innerHTML = i;
+}
 
-3 = reset
-x = 0
-innerhtml
-break
+function reset(){
+  i = 0;
+  numberDisplay.innerHTML = '0';
+}
 
-aggiungere controllo sul meno quando il valore è zero
-*/
-let i = 0
-const btn = document.querySelectorAll('button') // selezionato tutti gli elementi bottone della pagina
+function disableMinusButton(){
+  document.querySelector('.minus-button').disabled = true;
+  minusButton.style.color = 'green';
+}
 
-btn.forEach((e) =>{
-  switch(e){
-    case '+':
-      i++
-      document.getElementsByClassName('counter-display').innerHTML = i;
-      break;
-    case '-':
-      i--
-      document.getElementsByClassName('counter-display').innerHTML = i;
-      break;
-    case 'Reset':
-        i = 0
-        document.getElementsByClassName('counter-display').innerHTML = i;
-        break;
+function enableMinusButton(){
+  document.querySelector('.minus-button').disabled = false;
+}
+
+
+plusButton.addEventListener('click', () =>{
+  plus();
+
+  if(i >0){
+    enableMinusButton();
+    minusButton.style.color = 'white';
   }
 })
 
+minusButton.addEventListener('click', () =>{
+  if(i > 0){
+    minus();
+  }else{
+    disableMinusButton();
+  }
+})
 
+resetButton.addEventListener('click', () =>{
+  reset();
+})
 
 
