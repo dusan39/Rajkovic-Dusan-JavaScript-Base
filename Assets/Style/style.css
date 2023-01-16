@@ -6,6 +6,11 @@
   font-family: "Sofia Sans", sans-serif;
 }
 
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 97, 121) 29%, rgb(217, 217, 217) 100%);
+}
+
 /* Start header section */
 .header-container {
   background-color: black;
@@ -22,32 +27,25 @@
 /* Start of counter section */
 .counter-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
 }
-.counter-container .counter-display {
-  font-size: 35px;
+.counter-container .display-counter-container .counter-display {
+  font-size: 60px;
+  color: white;
 }
 .counter-container .buttons-container {
   display: flex;
-  justify-content: center;
-  margin: 3% 5%;
-  padding-top: 5%;
-}
-.counter-container .buttons-container .counter-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 60px;
-  color: white;
-  padding-left: 15%;
-  padding-right: 15%;
 }
 .counter-container .buttons-container .plus-button,
 .counter-container .buttons-container .minus-button {
   cursor: pointer;
-  margin: 20px;
+  margin-left: 65px;
+  margin-right: 65px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   padding: 20px;
   font-size: 30px;
   border-radius: 5px;
@@ -56,20 +54,44 @@
   color: white;
   transition: all 0.3s;
 }
-.counter-container .buttons-container .plus-button:hover,
-.counter-container .buttons-container .minus-button:hover {
+.counter-container .buttons-container .plus-button:active,
+.counter-container .buttons-container .minus-button:active {
   color: rgb(52, 110, 173);
   background-color: white;
   border: solid 1px rgb(52, 110, 173);
+}
+.counter-container .buttons-container .form-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 250px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgb(52, 110, 173);
+  color: white;
+  border: solid 1px white;
+  border-radius: 5px;
+}
+.counter-container .buttons-container .form-check .form-check-input {
+  margin-right: 5px;
+}
+.counter-container .reset-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .counter-container .reset-button-container .reset-button {
   cursor: pointer;
   padding: 25px;
   width: 250px;
   font-size: 20px;
+  margin-top: 20px;
   border-radius: 5px;
   background-color: rgb(173, 52, 52);
-  border: none;
+  border: solid 1px white;
   color: white;
   transition: all 0.3s;
 }
@@ -83,4 +105,28 @@
   transition: 0.1s;
 }
 
-/* End of counter section *//*# sourceMappingURL=style.css.map */
+/* End of counter section */
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px !important;
+    padding: 10px !important;
+  }
+  .plus-button,
+.minus-button {
+    width: 50px !important;
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    padding: 10px !important;
+  }
+  .reset-button {
+    width: 180px !important;
+    padding: 15px !important;
+  }
+  .form-check {
+    padding: 15px !important;
+    width: 180px !important;
+  }
+  .form-check .form-check-input {
+    margin-right: 2px !important;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@500;700&display=swap" rel="stylesheet">
 </head>
-<body background="Assets/Images/Wave.svg">
-</div>
+<body>
+  </div>
     <div class="header-container">
       <div class="title-container">
         <h1 class="title">Calculator with JavaScript</h1>
@@ -20,23 +20,33 @@
     </div>
 
     <div class="counter-container">
-      <div class="buttons-container">
-        <div class="plus-button-container">
-          <button class="plus-button">+</button>
-        </div>
-
-          <h1 class="counter-display">0</h1>
-
-        <div class="minus-button-container">
-          <button class="minus-button">-</button>
-        </div>
+      <div class="display-counter-container">
+        <h1 class="counter-display">0</h1>
       </div>
 
-      <div class="reset-button-container">
-        <button class="reset-button">Reset</button>
+    <div class="buttons-container">
+      <div class="plus-button-container">
+        <button class="plus-button">+</button>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+           Enable minus 0 
+        </label>
+      </div>
+
+      <div class="minus-button-container">
+        <button class="minus-button">-</button>
       </div>
     </div>
 
-    <script src="Assets/JavaScript/javascript.js"></script>
+    <div class="reset-button-container">
+      <button class="reset-button">Reset</button>
+    </div>
+
+  </div>
+
+  <script src="Assets/JavaScript/javascript.js"></script>
 </body>
 </html>
