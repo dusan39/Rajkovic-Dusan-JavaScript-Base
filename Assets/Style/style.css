@@ -30,7 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .counter-container .display-counter-container {
   display: block;
@@ -128,7 +128,7 @@ body {
     padding: 10px !important;
   }
   .counter-container {
-    margin-top: 50%;
+    margin-top: 30%;
   }
   .counter-container .display-counter-container {
     width: 180px !important;
