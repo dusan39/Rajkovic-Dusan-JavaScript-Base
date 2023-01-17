@@ -25,13 +25,11 @@ function reset(){
 function disableMinusButton(){
   document.querySelector('.minus-button').disabled = true;
   minusButton.style.opacity = '0.5'
-  minusButton.style.border = 'none'
 }
 
 function enableMinusButton(){
   document.querySelector('.minus-button').disabled = false;
   minusButton.style.opacity = '1'
-  minusButton.style.border = '1px solid white'
 }
 
 function disableCheckBox(){
@@ -73,5 +71,3 @@ checkMinus.addEventListener('click', () =>{
     enableMinusButton();
   }
 })
-
-
