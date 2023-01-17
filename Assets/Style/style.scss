@@ -137,6 +137,10 @@ body{
 /* End of counter section */
 
 @media (max-width: 768px){
+  * {
+    touch-action: manipulation;
+  }
+
   .title{
     font-size: 24px !important;
     padding: 10px !important;
