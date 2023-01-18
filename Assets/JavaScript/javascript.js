@@ -2,7 +2,7 @@ let plusButton = document.querySelector('.plus-button');
 let minusButton = document.querySelector('.minus-button');
 let resetButton = document.querySelector('.reset-button');
 let numberDisplay = document.querySelector('.counter-display');
-let checkMinus = document.querySelector('.form-check-input')
+let checkMinus = document.querySelector('.form-check-input');
 let i = 0;
 
 
@@ -18,7 +18,7 @@ function minus(){
 
 function reset(){
   i = 0;
-  numberDisplay.innerHTML = '0';
+  numberDisplay.innerHTML = i;
   document.querySelector('.form-check-input').checked = false;
 }
 
@@ -32,10 +32,6 @@ function enableMinusButton(){
   minusButton.style.opacity = '1'
 }
 
-function disableCheckBox(){
-  document.querySelector('.form-check-input').disabled = true;
-}
-
 function resetCheckBox(){
   i = 0;
   numberDisplay.innerHTML = i;
@@ -44,7 +40,7 @@ function resetCheckBox(){
 plusButton.addEventListener('click', () =>{
   plus();
 
-  if(i == 1){
+  if(i == 1 && document.querySelector('.minus-button').disabled == true){
     enableMinusButton();
   }
 })
