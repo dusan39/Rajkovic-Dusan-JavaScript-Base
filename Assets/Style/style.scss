@@ -33,23 +33,6 @@ body{
   flex-direction: column;
   margin-top: 15%;
 
-  .display-counter-container{
-    display: block;
-    width: 250px;
-    
-    .counter-display{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 40px;
-      height: 90px;
-      color: white;
-      border-top: solid 1px white;
-      border-bottom: solid 1px white;
-      background-color: rgb(43, 129, 222);
-    }
-  }
-
   .buttons-container{
     display: flex;
 
@@ -79,6 +62,23 @@ body{
       background-color: white;
       border: solid 1px rgb(52, 110, 173);
     }
+
+    .display-counter-container{
+      display: block;
+      width: 250px;
+      
+      .counter-display{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        height: 90px;
+        color: white;
+        border-top: solid 1px white;
+        border-bottom: solid 1px white;
+        background-color: rgb(43, 129, 222);
+      }
+    }
   }
 
   .function-container{
@@ -99,6 +99,7 @@ body{
       border-left: solid 1px white;
 
       .form-check-label{
+        cursor: pointer;
         color: white;
         margin-left: 8px;
         font-size: 20px;
@@ -134,49 +135,59 @@ body{
     }
   } 
 }
-/* End of counter section */
+
 
 @media (max-width: 768px){
-  * {
+  *{
     touch-action: manipulation;
-  }
+  }  
 
   .title{
-    font-size: 24px !important;
-    padding: 10px !important;
+    font-size: 24px;
+    padding: 10px;
   }
 
   .counter-container{
     margin-top: 30%;
 
-    .display-counter-container{
-      width: 180px !important;
+    .buttons-container{
 
-      .counter-display{
-        height: 70px !important;
+      .display-counter-container{
+        width: 180px;
+
+        .counter-display{
+          height: 70px;
+        }
+      }
+
+      .plus-button,
+      .minus-button{
+        width: 50px;
+        padding: 10px;
       }
     }
 
-    .plus-button,
-    .minus-button{
-      width: 50px !important;
-      padding: 10px !important;
-    }
+    .function-container{
 
-    .reset-button{
-      width: 140px !important;
-      height: 70px !important;
-      padding: 15px !important;
-    }
+      .form-check{
+        padding: 15px;
+        width: 140px;
+        height: 70px;
 
-    .form-check{
-      padding: 15px !important;
-      width: 140px !important;
-      height: 70px !important;
+        .form-check-input{
+          margin-right: 2px;
+        }
+      }
 
-      .form-check-input{
-        margin-right: 2px !important;
+        .reset-button-container{
+
+        .reset-button{
+          width: 140px;
+          height: 70px;
+          padding: 15px;
+        }
       }
     }
   }
 }
+/* End of counter section */
