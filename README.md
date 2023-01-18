@@ -40,9 +40,9 @@ let checkMinus = document.querySelector('.form-check-input');
 
 let i = 0;
 ```
-### Function plus()
+### Plus()
 
-Questa funzione permette di incrementare la nostra variabile **i** che inizialmente avrà valore 0, semplicemente quando viene attivata questa funzione viene incrementato di 1 alla volta il valore di **i** tramite il tasto plusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso **i = 0** e il tasto **minusButton** è disabilitato allora fa partire un'altra funzione che verrà descritta in seguito. 
+Questa funzione permette di incrementare la nostra variabile **i** che inizialmente avrà valore 0, semplicemente quando viene attivata questa funzione viene incrementato di 1 alla volta il valore di **i** tramite il tasto plusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso **i = 1** e il tasto **minusButton** è disabilitato allora fa partire un'altra funzione che riabilita il tasto minusButton che viene disattivato in una certa condizione che viene spiegata nella sezione **Function plus()**
 
 ```JavaScript
 function plus(){
@@ -64,9 +64,9 @@ plusButton.addEventListener('click', () =>{
 })
 ```
 
-### Function minus()
+### Minus()
 
-Questa funzione permette di decrementare la nostra variabile **i** , semplicemente quando viene attivata questa funzione viene decrementato di 1 alla volta il valore di **i** tramite il tasto minusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso che il valore di i = 0 allora 
+Questa funzione permette di decrementare la nostra variabile **i** , semplicemente quando viene attivata questa funzione viene decrementato di 1 alla volta il valore di **i** tramite il tasto minusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso che il valore di i > 0 oppure la checkbox che abilita il counter di andare sotto lo zero è attiva sennò se i = 0 e la checkbox è disattiva parte una disable sul tasto minusButton e anche a livello grafico avviene una modifica così da far capire che quel tasto non può essere riutilizzato fino a quando il valore di i non diventa 1 oppure che si abiliti la checkbox. 
 
 ```JavaScript
 function minus(){
@@ -88,6 +88,38 @@ minusButton.addEventListener('click', () =>{
 })
 ```
 
+### Reset()
 
+Queste due funzioni che si scatenano in certi casi permettono di resettare certi valori:
 
+- la **function reset()** viene scaturita al click del bottone reset che di defaul riporta a 0 il valore che viene visualizzato a display e toglie la flag alla checkbox se è presente
+- la **function resetCheckBox** viene lanciata in un caso specifico ovvero quando siamo nella parte sotto lo zero del counter e decidiamo di togliere la possibilità di andare sotto lo zero quindi la funzione riporta il valore di i a 0 e invece se siamo nella fase in cui i = 0 e c'è la flag sulla checkbox allora abilita il counter negativo 
+
+```JavaScript
+function reset(){
+  i = 0;
+  numberDisplay.innerHTML = i;
+  document.querySelector('.form-check-input').checked = false;
+}
+
+function resetCheckBox(){
+  i = 0;
+  numberDisplay.innerHTML = i;
+}
+
+resetButton.addEventListener('click', () =>{
+  reset();
+  if(document.querySelector('.minus-button').disabled == true){
+    enableMinusButton();
+  }
+})
+
+checkMinus.addEventListener('click', () =>{
+  if(i < 0 && document.querySelector('.form-check-input').checked == false){
+    resetCheckBox();
+  }else if(i == 0 && document.querySelector('.form-check-input').checked == true){
+    enableMinusButton();
+  }
+})
+```
 
