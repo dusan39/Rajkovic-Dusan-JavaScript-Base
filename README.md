@@ -13,7 +13,6 @@ Questo progetto è stato realizzato con l'utilizzo di :
 
 - Funzionalità
 - Logiche delle funzioni implementate
-- Tools utilizzati
 
 ## Presentazione funzionalità
 
