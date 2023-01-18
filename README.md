@@ -1,4 +1,4 @@
-# Calculator with JavaScript  ![GitHub last commit](https://img.shields.io/github/last-commit/dusan39/Rajkovic-Dusan-JavaScript-Base)
+# Calculator with JavaScript 
 
 Questo progetto è stato realizzato con l'utilizzo di :
 
@@ -8,6 +8,7 @@ Questo progetto è stato realizzato con l'utilizzo di :
 
 > <img src="https://img.icons8.com/color/24/null/javascript--v1.png"/> JavaScript
 
+![GitHub last commit](https://img.shields.io/github/last-commit/dusan39/Rajkovic-Dusan-JavaScript-Base)
 
 ## Cosa troverete in questo file
 
@@ -41,7 +42,7 @@ let i = 0;
 ```
 ### Plus()
 
-Questa funzione permette di incrementare la nostra variabile **i** che inizialmente avrà valore 0, semplicemente quando viene attivata questa funzione viene incrementato di 1 alla volta il valore di **i** tramite il tasto plusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso **i = 1** e il tasto **minusButton** è disabilitato allora fa partire un'altra funzione che riabilita il tasto minusButton che viene disattivato in una certa condizione che viene spiegata nella sezione **Function plus()**
+Questa funzione permette di incrementare la nostra variabile **i** che inizialmente avrà valore 0, semplicemente quando viene attivata questa funzione viene incrementato di 1 alla volta il valore di **i** tramite il tasto plusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso **i = 1** e il tasto **minusButton** è disabilitato allora fa partire un'altra funzione che riabilita il tasto minusButton che viene disattivato in una certa condizione che viene spiegata nella sezione **Function plus()**.
 
 ```JavaScript
 function plus(){
@@ -91,8 +92,8 @@ minusButton.addEventListener('click', () =>{
 
 Queste due funzioni che si scatenano in certi casi permettono di resettare certi valori:
 
-- la **function reset()** viene scaturita al click del bottone reset che di defaul riporta a 0 il valore che viene visualizzato a display e toglie la flag alla checkbox se è presente
-- la **function resetCheckBox** viene lanciata in un caso specifico ovvero quando siamo nella parte sotto lo zero del counter e decidiamo di togliere la possibilità di andare sotto lo zero quindi la funzione riporta il valore di i a 0 e invece se siamo nella fase in cui i = 0 e c'è la flag sulla checkbox allora abilita il counter negativo 
+- la **function reset()** viene scaturita al click del bottone reset che di defaul riporta a 0 il valore che viene visualizzato a display e toglie la flag alla checkbox se è presente.
+- la **function resetCheckBox** viene lanciata in un caso specifico ovvero quando siamo nella parte sotto lo zero del counter e decidiamo di togliere la possibilità di andare sotto lo zero quindi la funzione riporta il valore di i a 0 e invece se siamo nella fase in cui i = 0 e c'è la flag sulla checkbox allora abilita il counter negativo .
 
 ```JavaScript
 function reset(){
@@ -121,4 +122,12 @@ checkMinus.addEventListener('click', () =>{
   }
 })
 ```
+### Rimozione zoom su mobile e tablet
 
+Per quanto riguarda la versione mobile ho voluto rimuovere lo zoom con il doppio click sullo schermo perchè utilizzando i bottoni velocemente si va incontro al fastidioso caso in cui si fa lo zoom sullo schermo e poi rende difficile l'utilizzo del counter, tramite questa semplice aggiunta nel css si risolve questa problematica.
+
+```CSS
+  * {
+    touch-action: manipulation;
+  }
+```
