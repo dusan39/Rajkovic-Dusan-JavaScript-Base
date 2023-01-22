@@ -25,7 +25,7 @@ Questo progetto prevede una semplice funzionalità di counter tramite due botton
 
 ### Dichiarazione variabili
 
-Queste sono le variavili utilizzate all'interno del codice Js, per puntare a questi elementi nell'HTML ho utilizzato il querySelector passandogli il nome della classe d'interesse.
+Queste sono le variavili utilizzate all'interno del codice Js, per puntare a questi elementi nell'HTML ho utilizzato il querySelector passandogli il nome della classe d'interesse ed infine la variabile i che conterrà il valore del counter che verrà aggiornato ogni volta in base al bottone cliccato.
 
 ```JavaScript
 let plusButton = document.querySelector('.plus-button');
