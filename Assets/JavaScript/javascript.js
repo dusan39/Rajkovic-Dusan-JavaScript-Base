@@ -1,10 +1,10 @@
-let plusButton = document.querySelector('#plus-button');
-let minusButton = document.querySelector('#minus-button');
-let resetButton = document.querySelector('#reset-button');
+const plusButton = document.querySelector('#plus-button');
+const minusButton = document.querySelector('#minus-button');
+const resetButton = document.querySelector('#reset-button');
+const checkMinus = document.querySelector('#form-check-input');
+const counterContainer = document.querySelector('#counter-container');
 let numberDisplay = document.querySelector('#counter-display');
-let checkMinus = document.querySelector('#form-check-input');
 let i = 0;
-
 
 function plus(){
   i++;
@@ -37,33 +37,41 @@ function resetCheckBox(){
   numberDisplay.innerHTML = i;
 }
 
-plusButton.addEventListener('click', () =>{
-  plus();
+counterContainer.addEventListener('click', function(e){
+  const target = e.target;
 
-  if(i == 1 && minusButton.disabled == true){
-    enableMinusButton();
-  }
+  switch(true){
+    case target == plusButton:
+      plus();
+
+      if(i == 1 && minusButton.disabled == true){
+        enableMinusButton();
+      }
+      break;
+
+    case target == minusButton:
+      if(i > 0 || checkMinus.checked == true){
+        minus();
+      }else if(i == 0 || checkMinus.checked == false){
+        disableMinusButton();
+      }
+      break;
+
+    case target == checkMinus:
+      if(i < 0 && checkMinus.checked == false){
+        resetCheckBox();
+      }else if(i == 0 && checkMinus.checked == true){
+        enableMinusButton();
+      }
+      break;
+    
+    case target == resetButton:
+      reset();
+      if(minusButton.disabled == true){
+        enableMinusButton();
+      }
+      break;
+    }
 })
 
-minusButton.addEventListener('click', () =>{
-  if(i > 0 || checkMinus.checked == true){
-    minus();
-  }else if(i == 0 || checkMinus.checked == false){
-    disableMinusButton();
-  }
-})
 
-resetButton.addEventListener('click', () =>{
-  reset();
-  if(minusButton.disabled == true){
-    enableMinusButton();
-  }
-})
-
-checkMinus.addEventListener('click', () =>{
-  if(i < 0 && checkMinus.checked == false){
-    resetCheckBox();
-  }else if(i == 0 && checkMinus.checked == true){
-    enableMinusButton();
-  }
-})
