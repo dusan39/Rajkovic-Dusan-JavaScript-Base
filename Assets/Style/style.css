@@ -35,8 +35,8 @@ body {
 .counter-container .buttons-container {
   display: flex;
 }
-.counter-container .buttons-container .plus-button,
-.counter-container .buttons-container .minus-button {
+.counter-container .buttons-container #plus-button,
+.counter-container .buttons-container #minus-button {
   cursor: pointer;
   padding: 20px;
   font-size: 40px;
@@ -46,14 +46,14 @@ body {
   color: white;
   transition: all 0.3s;
 }
-.counter-container .buttons-container .plus-button {
+.counter-container .buttons-container #plus-button {
   border-top-left-radius: 5px;
 }
-.counter-container .buttons-container .minus-button {
+.counter-container .buttons-container #minus-button {
   border-top-right-radius: 5px;
 }
-.counter-container .buttons-container .plus-button:active,
-.counter-container .buttons-container .minus-button:active {
+.counter-container .buttons-container #plus-button:active,
+.counter-container .buttons-container #minus-button:active {
   color: rgb(52, 110, 173);
   background-color: white;
   border: solid 1px rgb(52, 110, 173);
@@ -62,7 +62,7 @@ body {
   display: block;
   width: 250px;
 }
-.counter-container .buttons-container .display-counter-container .counter-display {
+.counter-container .buttons-container .display-counter-container #counter-display {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +90,7 @@ body {
   border-bottom: solid 1px white;
   border-left: solid 1px white;
 }
-.counter-container .function-container .form-check .form-check-label {
+.counter-container .function-container .form-check #form-check-label {
   cursor: pointer;
   color: white;
   margin-left: 8px;
@@ -101,7 +101,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.counter-container .function-container .reset-button-container .reset-button {
+.counter-container .function-container .reset-button-container #reset-button {
   cursor: pointer;
   padding: 25px;
   width: 210px;
@@ -116,7 +116,7 @@ body {
   color: white;
   transition: all 0.3s;
 }
-.counter-container .function-container .reset-button-container .reset-button:active {
+.counter-container .function-container .reset-button-container #reset-button:active {
   color: rgb(52, 110, 173);
   background-color: white;
   border: solid 1px rgb(52, 110, 173);
@@ -136,11 +136,11 @@ body {
   .counter-container .buttons-container .display-counter-container {
     width: 180px;
   }
-  .counter-container .buttons-container .display-counter-container .counter-display {
+  .counter-container .buttons-container .display-counter-container #counter-display {
     height: 70px;
   }
-  .counter-container .buttons-container .plus-button,
-.counter-container .buttons-container .minus-button {
+  .counter-container .buttons-container #plus-button,
+.counter-container .buttons-container #minus-button {
     width: 50px;
     padding: 10px;
   }
@@ -149,10 +149,10 @@ body {
     width: 140px;
     height: 70px;
   }
-  .counter-container .function-container .form-check .form-check-input {
+  .counter-container .function-container .form-check #form-check-input {
     margin-right: 2px;
   }
-  .counter-container .function-container .reset-button-container .reset-button {
+  .counter-container .function-container .reset-button-container #reset-button {
     width: 140px;
     height: 70px;
     padding: 15px;

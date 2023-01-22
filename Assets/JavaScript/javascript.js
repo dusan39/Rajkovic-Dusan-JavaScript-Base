@@ -1,8 +1,8 @@
-let plusButton = document.querySelector('.plus-button');
-let minusButton = document.querySelector('.minus-button');
-let resetButton = document.querySelector('.reset-button');
-let numberDisplay = document.querySelector('.counter-display');
-let checkMinus = document.querySelector('.form-check-input');
+let plusButton = document.querySelector('#plus-button');
+let minusButton = document.querySelector('#minus-button');
+let resetButton = document.querySelector('#reset-button');
+let numberDisplay = document.querySelector('#counter-display');
+let checkMinus = document.querySelector('#form-check-input');
 let i = 0;
 
 
@@ -19,16 +19,16 @@ function minus(){
 function reset(){
   i = 0;
   numberDisplay.innerHTML = i;
-  document.querySelector('.form-check-input').checked = false;
+  checkMinus.checked = false;
 }
 
 function disableMinusButton(){
-  document.querySelector('.minus-button').disabled = true;
+  minusButton.disabled = true;
   minusButton.style.opacity = '0.5'
 }
 
 function enableMinusButton(){
-  document.querySelector('.minus-button').disabled = false;
+  minusButton.disabled = false;
   minusButton.style.opacity = '1'
 }
 
@@ -40,30 +40,30 @@ function resetCheckBox(){
 plusButton.addEventListener('click', () =>{
   plus();
 
-  if(i == 1 && document.querySelector('.minus-button').disabled == true){
+  if(i == 1 && minusButton.disabled == true){
     enableMinusButton();
   }
 })
 
 minusButton.addEventListener('click', () =>{
-  if(i > 0 || document.querySelector('.form-check-input').checked == true){
+  if(i > 0 || checkMinus.checked == true){
     minus();
-  }else if(i == 0 || document.querySelector('.form-check-input').checked == false){
+  }else if(i == 0 || checkMinus.checked == false){
     disableMinusButton();
   }
 })
 
 resetButton.addEventListener('click', () =>{
   reset();
-  if(document.querySelector('.minus-button').disabled == true){
+  if(minusButton.disabled == true){
     enableMinusButton();
   }
 })
 
 checkMinus.addEventListener('click', () =>{
-  if(i < 0 && document.querySelector('.form-check-input').checked == false){
+  if(i < 0 && checkMinus.checked == false){
     resetCheckBox();
-  }else if(i == 0 && document.querySelector('.form-check-input').checked == true){
+  }else if(i == 0 && checkMinus.checked == true){
     enableMinusButton();
   }
 })
