@@ -12,15 +12,15 @@ body {
 }
 
 /* Start header section */
-.header-container {
-  background-color: black;
-  color: white;
-}
-.header-container .title-container {
+.title-container {
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 3% 5%;
+  background-color: black;
+}
+.title-container .title {
+  color: white;
 }
 
 /* End header section */
@@ -91,7 +91,6 @@ body {
   border-left: solid 1px white;
 }
 #counter-container .function-container .form-check #form-check-label {
-  cursor: pointer;
   color: white;
   margin-left: 8px;
   font-size: 20px;
@@ -127,7 +126,7 @@ body {
     touch-action: manipulation;
   }
   .title {
-    font-size: 24px;
+    font-size: 18px;
     padding: 10px;
   }
   .counter-container {
