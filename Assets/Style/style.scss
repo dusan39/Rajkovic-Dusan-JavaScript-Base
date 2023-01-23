@@ -12,7 +12,7 @@ body{
 }
 
 /* Start header section */
-.title-container{
+#title-container{
   display: flex;
   justify-content: center;
   text-align: center;
@@ -34,7 +34,7 @@ body{
   flex-direction: column;
   margin-top: 15%;
 
-  .buttons-container{
+  #buttons-container{
     display: flex;
 
     #plus-button,
@@ -64,7 +64,7 @@ body{
       border: solid 1px rgb(52, 110, 173);
     }
 
-    .display-counter-container{
+    #display-counter-container{
       display: block;
       width: 250px;
       
@@ -82,13 +82,14 @@ body{
     }
   }
 
-  .function-container{
+  #function-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 
-    .form-check{
+    #form-check{
+      cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -99,6 +100,10 @@ body{
       border-bottom: solid 1px white;
       border-left: solid 1px white;
 
+      #form-check-input{
+        cursor: pointer;
+      }
+
       #form-check-label{
         color: white;
         margin-left: 8px;
@@ -106,7 +111,7 @@ body{
       }
     }
 
-    .reset-button-container{
+    #reset-button-container{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -147,29 +152,33 @@ body{
     padding: 10px;
   }
 
-  .counter-container{
+  #counter-container{
     margin-top: 30%;
 
-    .buttons-container{
+    #buttons-container{
 
-      .display-counter-container{
+      #display-counter-container{
         width: 180px;
 
         #counter-display{
+          font-size: 24px;
           height: 70px;
         }
       }
 
       #plus-button,
       #minus-button{
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
         width: 50px;
-        padding: 10px;
+        height: 70px;
       }
     }
 
-    .function-container{
+    #function-container{
 
-      .form-check{
+      #form-check{
         padding: 15px;
         width: 140px;
         height: 70px;
@@ -177,11 +186,16 @@ body{
         #form-check-input{
           margin-right: 2px;
         }
+
+        #form-check-label{
+          font-size: 16px;
+        }
       }
 
-        .reset-button-container{
+      #reset-button-container{
 
           #reset-button{
+          font-size: 16px;
           width: 140px;
           height: 70px;
           padding: 15px;

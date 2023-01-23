@@ -1,96 +1,85 @@
-/*const plusButton = document.querySelector('#plus-button');
-const minusButton = document.querySelector('#minus-button');
-const resetButton = document.querySelector('#reset-button');
-const checkMinus = document.querySelector('#form-check-input');
-const counterContainer = document.querySelector('#counter-container');
-let numberDisplay = document.querySelector('#counter-display');
-*/
+// importazione funzioni per la creazione degli elementi HTML tramite JS
+import {
+  createContainer,
+  createTitle,
+  createButton,
+  createDIsplayNumber,
+  createCheckBox,
+  createLabel
+} from './createHTML.js';
+
+// dichiarazione variabile che verrà utilizzata per incrementare o decrementare il contatore 
 let i = 0;
 
-//title section
-const titleContainer = document.createElement('div')
-titleContainer.className = 'title-container'
+// Inizio sezione title
+const titleContainer = createContainer('title-container')
 document.body.appendChild(titleContainer)
 
-const title = document.createElement('h1')
+const title = createTitle('title')
 title.innerHTML = 'Calculator with JavaScript'
-title.className = 'title'
 titleContainer.appendChild(title)
+// Fine sezione title
 
-// + 0 - section
-const counterContainer = document.createElement('div')
-counterContainer.id = 'counter-container'
+// Container principale
+const counterContainer = createContainer('counter-container')
 document.body.appendChild(counterContainer)
 
-const buttonsContainer = document.createElement('div')
-buttonsContainer.className = 'buttons-container'
+// Container dei tasti + e - ed anche il valore display 
+const buttonsContainer = createContainer('buttons-container')
 counterContainer.appendChild(buttonsContainer)
 
-// +
-const plusContainer = document.createElement('div')
-plusContainer.className = 'plus-button-container'
+// Inizio bottone +
+const plusContainer = createContainer('plus-button-container')
 buttonsContainer.appendChild(plusContainer)
 
-const plusBtn = document.createElement('button')
+const plusBtn = createButton('plus-button')
 plusBtn.innerHTML = '+'
-plusBtn.id = 'plus-button'
 plusContainer.appendChild(plusBtn)
-// fine +
+// Fine bottone +
 
-// 0 
-const displayContainer = document.createElement('div')
-displayContainer.className = 'display-counter-container'
+// Inizio sezione display 
+const displayContainer = createContainer('display-counter-container')
 buttonsContainer.appendChild(displayContainer)
 
-const numberDisplay = document.createElement('h2')
+const numberDisplay = createDIsplayNumber('counter-display')
 numberDisplay.innerHTML = i
-numberDisplay.id = 'counter-display'
 displayContainer.appendChild(numberDisplay)
-// 0 fine
+// Fine display value
 
-// -
-const minusContainer = document.createElement('div')
-minusContainer.className = 'minus-button-container'
+// Inizio sezione bottone -
+const minusContainer = createContainer('minus-button-container')
 buttonsContainer.appendChild(minusContainer)
 
-const minusBtn = document.createElement('button')
+const minusBtn = createButton('minus-button')
 minusBtn.innerHTML = '-'
-minusBtn.id = 'minus-button'
 minusContainer.appendChild(minusBtn)
-//- fine
+// Fine sezione bottone -
 
-// check e form
-const functionContainer = document.createElement('div')
-functionContainer.className = 'function-container'
+// Container checkbox e bottone reset
+const functionContainer = createContainer('function-container')
 counterContainer.appendChild(functionContainer)
 
-const formCheck = document.createElement('div')
-formCheck.className = 'form-check'
+// Inizio sezione checkbox
+const formCheck = createContainer('form-check')
 functionContainer.appendChild(formCheck)
 
-const formCheckInput = document.createElement('input')
-formCheckInput.type = 'checkbox'
-formCheckInput.id = 'form-check-input'
+const formCheckInput = createCheckBox('form-check-input')
 formCheck.appendChild(formCheckInput)
 
-const formCheckLabel = document.createElement('label')
-formCheckLabel.innerHTML = 'Minus 0'
-formCheckInput.id = 'form-check-label'
+const formCheckLabel = createLabel('form-check-label')
 formCheck.appendChild(formCheckLabel)
-// fine check e form
+// Fine sezione checkbox
 
-// reset 
-const resetContainer = document.createElement('div')
-resetContainer.className = 'reset-button-container'
+// Inizio sezione reset
+const resetContainer = createContainer('reset-button-container')
 functionContainer.appendChild(resetContainer)
 
-const resetBtn = document.createElement('button')
+const resetBtn = createButton('reset-button')
 resetBtn.innerHTML = 'Reset'
-resetBtn.id = 'reset-button'
 resetContainer.appendChild(resetBtn)
+// Fine sezione reset
 
-// fine reset
-
+// Implementazioni funzioni per il calcolatore
 function plus(){
   i++;
   numberDisplay.innerHTML = i;
@@ -122,6 +111,7 @@ function resetCheckBox(){
   numberDisplay.innerHTML = i;
 }
 
+// event listener al container generale dove alla costante 'target' e uno switch in base al click capisce che funzione attivare a quel particolare bottone
 counterContainer.addEventListener('click', function(e){
   const target = e.target;
 
@@ -158,5 +148,3 @@ counterContainer.addEventListener('click', function(e){
       break;
     }
 })
-
-
