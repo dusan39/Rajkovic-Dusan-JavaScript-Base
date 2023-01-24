@@ -32,7 +32,6 @@ export function createCheckBox(id){
 
 export function createLabel(id){
   const formCheckLabel = document.createElement('label')
-  formCheckLabel.innerHTML = 'Minus 0'
   formCheckLabel.id = id
   return formCheckLabel
 }

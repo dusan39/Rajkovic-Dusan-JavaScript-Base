@@ -67,6 +67,7 @@ const formCheckInput = createCheckBox('form-check-input')
 formCheck.appendChild(formCheckInput)
 
 const formCheckLabel = createLabel('form-check-label')
+formCheckLabel.innerHTML = 'Minus 0'
 formCheck.appendChild(formCheckLabel)
 // Fine sezione checkbox
 
@@ -93,7 +94,9 @@ function minus(){
 function reset(){
   i = 0;
   numberDisplay.innerHTML = i;
-  formCheckInput.checked = false;
+  if(formCheckInput.checked == true){
+    formCheckInput.checked = false;
+  }
 }
 
 function disableMinusButton(){
