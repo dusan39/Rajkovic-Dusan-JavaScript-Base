@@ -1,82 +1,72 @@
 // importazione funzioni per la creazione degli elementi HTML tramite JS
 import {
-  createContainer,
-  createTitle,
-  createButton,
-  createDIsplayNumber,
-  createCheckBox,
-  createLabel
+  createElement
 } from './createHTML.js';
 
 // dichiarazione variabile che verrà utilizzata per incrementare o decrementare il contatore 
 let i = 0;
 
 // Inizio sezione title
-const titleContainer = createContainer('title-container')
+const titleContainer = createElement('div', 'title-container', '', '')
 document.body.appendChild(titleContainer)
 
-const title = createTitle('title')
-title.innerHTML = 'Calculator with JavaScript'
+const title = createElement('h1', 'title', '', 'Calculator with JavaScript')
 titleContainer.appendChild(title)
 // Fine sezione title
 
 // Container principale
-const counterContainer = createContainer('counter-container')
+const counterContainer = createElement('div', 'counter-container', '', '')
 document.body.appendChild(counterContainer)
 
 // Container dei tasti + e - ed anche il valore display 
-const buttonsContainer = createContainer('buttons-container')
+const buttonsContainer = createElement('div', 'buttons-container', '', '')
 counterContainer.appendChild(buttonsContainer)
 
 // Inizio bottone +
-const plusContainer = createContainer('plus-button-container')
+const plusContainer = createElement('div', 'plus-button-container', '', '')
 buttonsContainer.appendChild(plusContainer)
 
-const plusBtn = createButton('plus-button')
-plusBtn.innerHTML = '+'
+const plusBtn = createElement('button', '', 'plus-button', '+')
 plusContainer.appendChild(plusBtn)
 // Fine bottone +
 
 // Inizio sezione display 
-const displayContainer = createContainer('display-counter-container')
+const displayContainer = createElement('div', 'display-counter-container', '', '')
 buttonsContainer.appendChild(displayContainer)
 
-const numberDisplay = createDIsplayNumber('counter-display')
-numberDisplay.innerHTML = i
+const numberDisplay = createElement('h2', '', 'counter-display', i)
 displayContainer.appendChild(numberDisplay)
 // Fine display value
 
 // Inizio sezione bottone -
-const minusContainer = createContainer('minus-button-container')
+const minusContainer = createElement('div', 'minus-button-container', '', '')
 buttonsContainer.appendChild(minusContainer)
 
-const minusBtn = createButton('minus-button')
-minusBtn.innerHTML = '-'
+const minusBtn = createElement('button', '', 'minus-button', '-')
 minusContainer.appendChild(minusBtn)
 // Fine sezione bottone -
 
 // Container checkbox e bottone reset
-const functionContainer = createContainer('function-container')
+const functionContainer = createElement('div', 'function-container', '', '')
 counterContainer.appendChild(functionContainer)
 
 // Inizio sezione checkbox
-const formCheck = createContainer('form-check')
+const formCheck = createElement('div', '', 'form-check', '')
 functionContainer.appendChild(formCheck)
 
-const formCheckInput = createCheckBox('form-check-input')
+const formCheckInput = createElement('input', '', 'form-check-input', '')
+formCheckInput.type = 'checkbox'
 formCheck.appendChild(formCheckInput)
 
-const formCheckLabel = createLabel('form-check-label')
-formCheckLabel.innerHTML = 'Minus 0'
+const formCheckLabel = createElement('div', '', 'form-check-label', 'Minus 0')
 formCheck.appendChild(formCheckLabel)
 // Fine sezione checkbox
 
 // Inizio sezione reset
-const resetContainer = createContainer('reset-button-container')
+const resetContainer = createElement('div', 'reset-button-container', '', '')
 functionContainer.appendChild(resetContainer)
 
-const resetBtn = createButton('reset-button')
-resetBtn.innerHTML = 'Reset'
+const resetBtn = createElement('button', '', 'reset-button', 'Reset')
 resetContainer.appendChild(resetBtn)
 // Fine sezione reset
 

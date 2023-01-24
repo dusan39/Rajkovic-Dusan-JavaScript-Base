@@ -12,7 +12,7 @@ body{
 }
 
 /* Start header section */
-#title-container{
+.title-container{
   display: flex;
   justify-content: center;
   text-align: center;
@@ -26,14 +26,14 @@ body{
 /* End header section */
 
 /* Start of counter section */
-#counter-container{
+.counter-container{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 15%;
 
-  #buttons-container{
+  .buttons-container{
     display: flex;
 
     #plus-button,
@@ -63,7 +63,7 @@ body{
       border: solid 1px rgb(52, 110, 173);
     }
 
-    #display-counter-container{
+    .display-counter-container{
       display: block;
       width: 250px;
       
@@ -81,7 +81,7 @@ body{
     }
   }
 
-  #function-container{
+  .function-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ body{
       }
     }
 
-    #reset-button-container{
+    .reset-button-container{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -151,12 +151,12 @@ body{
     padding: 10px;
   }
 
-  #counter-container{
+  .counter-container{
     margin-top: 30%;
 
-    #buttons-container{
+    .buttons-container{
 
-      #display-counter-container{
+      .display-counter-container{
         width: 180px;
 
         #counter-display{
@@ -175,7 +175,7 @@ body{
       }
     }
 
-    #function-container{
+    .function-container{
 
       #form-check{
         padding: 15px;
@@ -191,7 +191,7 @@ body{
         }
       }
 
-      #reset-button-container{
+      .reset-button-container{
 
           #reset-button{
           font-size: 16px;
