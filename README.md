@@ -28,7 +28,7 @@ Per questa parte qua ho creato un file esterno dove ho dichiarato la funzione pe
 
 ```JavaScript
 export const createElement = (tag, className, id, content) => {
-	const el = document.createElement(tag)
+  const el = document.createElement(tag)
   el.className = className
   el.id = id
   el.innerHTML= content
