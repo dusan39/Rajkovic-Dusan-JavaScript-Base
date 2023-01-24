@@ -24,20 +24,22 @@ Questo progetto prevede una semplice funzionalità di counter tramite due botton
 
 ### Implementazione HTML tramite JavaScript
 
-Per questa parte qua ho creato un file esterno dove ho dichiarato le funzioni necessarie per creare tutti gli elementi con esse senza avare niente nel body, queste poi sono state esportate nel file .js principale dove semplicemente passandogli l'id o il nome della classe riesce a creare l'elemento HTML, l'esempio mostrato qua sotto è stato utilizzato per creare i vari div che contengono i vari bottoni e su questo si basano anche le altre funzioni per i restanti elementi HTML.
+Per questa parte qua ho creato un file esterno dove ho dichiarato la funzione per creare tutti gli elementi con esse senza avere niente nel body, questa poi è stata esportata nel file .js principale dove semplicemente passandogli tag, nome della classe, id e cosa deve esserci all'interno di quell'elemento,  riesce a creare l'elemento HTML.
 
 ```JavaScript
-export function createContainer(id){
-  const div = document.createElement('div')
-  div.id = id
-  return div
+export const createElement = (tag, className, id, content) => {
+  const el = document.createElement(tag)
+  el.className = className
+  el.id = id
+  el.innerHTML= content
+  return el
+}
 }
 ```
-Sotto troverete l'esempio di una funzione utilizzata per creare l'elemento HTML passandogli semplicemente il valore id:
+Sotto troverete l'esempio di una funzione utilizzata per creare l'elemento div passandogli semplicemente il valore tag e className:
 
 ```JavaScript
-const counterContainer = createContainer('counter-container')
-document.body.appendChild(counterContainer)
+const counterContainer = createElement('div', 'counter-container', '', '')
 ```
 
 ### EventListener sull'intero div con target
@@ -154,3 +156,7 @@ Per quanto riguarda la versione mobile ho voluto rimuovere lo zoom con il doppio
     touch-action: manipulation;
   }
 ```
+
+### Link Counter
+
+https://dusan39.github.io/Rajkovic-Dusan-JavaScript-Base/
