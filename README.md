@@ -40,7 +40,6 @@ Sotto troverete l'esempio di una funzione utilizzata per creare l'elemento div p
 
 ```JavaScript
 const counterContainer = createElement('div', 'counter-container', '', '')
-document.body.appendChild(counterContainer)
 ```
 
 ### EventListener sull'intero div con target
