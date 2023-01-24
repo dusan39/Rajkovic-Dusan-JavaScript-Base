@@ -13,115 +13,138 @@ Questo progetto è stato realizzato con l'utilizzo di :
 ## Cosa troverete in questo file
 
 - Funzionalità
-- Logiche delle funzioni implementate
+- Implementazione HTML tramite JavaScript
 
-## Presentazione funzionalità
+## Funzionalità
 
 Questo progetto prevede una semplice funzionalità di counter tramite due bottoni + e - che aggiornano in tempo reale un valore nella sezione display, oltre a questi elementi descritti ci sono 2 altre aggiunte che introducono delle piccole possibilità di gestire certe casistiche, ovvero un bottone reset che riporta tutti gli elementi allo stato di default e l'altro elemento aggiunto è una checkbox che permette al counter di andare sotto lo zero quando avviene il check.  
 
 <img width="505" alt="calculator" src="https://user-images.githubusercontent.com/114413164/213029079-6028825c-e7b1-4bc9-8a0d-0cc02f07df01.png">
 
-## Logiche delle funzioni implementate
 
-### Dichiarazione variabili
+### Implementazione HTML tramite JavaScript
 
-Queste sono le variavili utilizzate all'interno del codice Js, per puntare a questi elementi nell'HTML ho utilizzato il querySelector passandogli il nome della classe d'interesse ed infine la variabile i che conterrà il valore del counter che verrà aggiornato ogni volta in base al bottone cliccato.
+Per questa parte qua ho creato un file esterno dove ho dichiarato le funzioni necessarie per creare tutti gli elementi con esse senza avare niente nel body, queste poi sono state esportate nel file .js principale dove semplicemente passandogli l'id o il nome della classe riesce a creare l'elemento HTML, l'esempio mostrato qua sotto è stato utilizzato per creare i vari div che contengono i vari bottoni e su questo si basano anche le altre funzioni per i restanti elementi HTML.
 
 ```JavaScript
-let plusButton = document.querySelector('.plus-button');
-
-let minusButton = document.querySelector('.minus-button');
-
-let resetButton = document.querySelector('.reset-button');
-
-let numberDisplay = document.querySelector('.counter-display');
-
-let checkMinus = document.querySelector('.form-check-input');
-
-let i = 0;
+export function createContainer(id){
+  const div = document.createElement('div')
+  div.id = id
+  return div
+}
 ```
-### Plus()
+Sotto troverete l'esempio di una funzione utilizzata per creare l'elemento HTML passandogli semplicemente il valore id:
 
-Questa funzione permette di incrementare la nostra variabile **i** che inizialmente avrà valore 0, semplicemente quando viene attivata questa funzione viene incrementato di 1 alla volta il valore di **i** tramite il tasto plusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso **i = 1** e il tasto **minusButton** è disabilitato allora fa partire un'altra funzione che riabilita il tasto minusButton che viene disattivato in una certa condizione che viene spiegata nella sezione **Function plus()**.
+```JavaScript
+const counterContainer = createContainer('counter-container')
+document.body.appendChild(counterContainer)
+```
+
+### EventListener sull'intero div con target
+
+Questo eventListener è stato aggiunto su tutto il div dove sono presenti possibili click, per capire cosa far scaturire al momento del click è stata creata una costante target che tramite uno switch confronta tutte le possibile casistiche finchè non trova quella in questione e quindi fa partire le varie funzioni presenti all'interno.
+
+```JavaScript
+counterContainer.addEventListener('click', function(e){
+  const target = e.target;
+
+  switch(true){
+    case target == plusBtn:
+      plus();
+
+      if(i == 1 && minusBtn.disabled == true){
+        enableMinusButton();
+      }
+      break;
+
+    case target == minusBtn:
+      if(i > 0 || formCheckInput.checked == true){
+        minus();
+      }else if(i == 0 || formCheckInput.checked == false){
+        disableMinusButton();
+      }
+      break;
+
+    case target == formCheckInput:
+      if(i < 0 && formCheckInput.checked == false){
+        resetCheckBox();
+      }else if(i == 0 && formCheckInput.checked == true){
+        enableMinusButton();
+      }
+      break;
+    
+    case target == resetBtn:
+      reset();
+      if(minusBtn.disabled == true){
+        enableMinusButton();
+      }
+      break;
+    }
+})
+```
+
+### Funzioni 
+
+Le funzioni utilizzate per questo progetto sono:
+
+- plus() = incrementa la variabile **i** di uno e assegna il suo valore al campo display per la visualizzazione.
 
 ```JavaScript
 function plus(){
   i++;
   numberDisplay.innerHTML = i;
 }
-
-function enableMinusButton(){
-  document.querySelector('.minus-button').disabled = false;
-  minusButton.style.opacity = '1'
-}
-
-plusButton.addEventListener('click', () =>{
-  plus();
-
-  if(i == 1 && document.querySelector('.minus-button').disabled == true){
-    enableMinusButton();
-  }
-})
 ```
 
-### Minus()
-
-Questa funzione permette di decrementare la nostra variabile **i** , semplicemente quando viene attivata questa funzione viene decrementato di 1 alla volta il valore di **i** tramite il tasto minusButton a cui è stato aggiunto un EventListener al suo click fa scaturire la funzione e quando si arriva al caso che il valore di i > 0 oppure la checkbox che abilita il counter di andare sotto lo zero è attiva sennò se i = 0 e la checkbox è disattiva parte una disable sul tasto minusButton e anche a livello grafico avviene una modifica così da far capire che quel tasto non può essere riutilizzato fino a quando il valore di i non diventa 1 oppure che si abiliti la checkbox. 
+- minus() = decrementa la variabile **i** di uno e assegna il suo valore al campo display per la visualizzazione.
 
 ```JavaScript
 function minus(){
   i--;
   numberDisplay.innerHTML = i;
 }
-
-function disableMinusButton(){
-  document.querySelector('.minus-button').disabled = true;
-  minusButton.style.opacity = '0.5'
-}
-
-minusButton.addEventListener('click', () =>{
-  if(i > 0 || document.querySelector('.form-check-input').checked == true){
-    minus();
-  }else if(i == 0 || document.querySelector('.form-check-input').checked == false){
-    disableMinusButton();
-  }
-})
 ```
 
-### Reset()
+- reset() = assegna il valore a 0 ad i, poi lo passa al campo display ed infine se la checkbox è attiva viene disabilitata.
 
-Queste due funzioni che si scatenano in certi casi permettono di resettare certi valori:
-
-- la **function reset()** viene scaturita al click del bottone reset che di defaul riporta a 0 il valore che viene visualizzato a display e toglie la flag alla checkbox se è presente.
-- la **function resetCheckBox** viene lanciata in un caso specifico ovvero quando siamo nella parte sotto lo zero del counter e decidiamo di togliere la possibilità di andare sotto lo zero quindi la funzione riporta il valore di i a 0 e invece se siamo nella fase in cui i = 0 e c'è la flag sulla checkbox allora abilita il counter negativo .
 
 ```JavaScript
 function reset(){
   i = 0;
   numberDisplay.innerHTML = i;
-  document.querySelector('.form-check-input').checked = false;
+  if(formCheckInput.checked == true){
+    formCheckInput.checked = false;
+  }
 }
+```
 
+- disableMinusButton() = in base a che casistica si trova il contatore questa funzione permette di disabilitare il bottone meno e anche a livello grafico dargli un effetto per far capire che è disattivo.
+
+```JavaScript
+function disableMinusButton(){
+  minusBtn.disabled = true;
+  minusBtn.style.opacity = '0.5'
+}
+```
+
+- enableMinusButton() = in base a che casistica si trova il contatore questa funzione permette di abilitare il bottone meno e a livello grafico toglie lo stile aggiunto dalla funzione disable per far capire che è possibile riutilizzare il bottone.
+
+```JavaScript
+function enableMinusButton(){
+  minusBtn.disabled = false;
+  minusBtn.style.opacity = '1'
+}
+```
+
+- resetCheckBox() = questa funzione può essere vista come una copia del tasto reset però è diverso perchè questa funzione viene lanciata solamente quando si decide di non volere più utilizzare il contatore sotto lo 0 e quindi ti riporta il valore display però se disabilitiamo la checkbox e siamo sopra lo zero non succede niente.
+
+```JavaScript
 function resetCheckBox(){
   i = 0;
   numberDisplay.innerHTML = i;
 }
-
-resetButton.addEventListener('click', () =>{
-  reset();
-  if(document.querySelector('.minus-button').disabled == true){
-    enableMinusButton();
-  }
-})
-
-checkMinus.addEventListener('click', () =>{
-  if(i < 0 && document.querySelector('.form-check-input').checked == false){
-    resetCheckBox();
-  }else if(i == 0 && document.querySelector('.form-check-input').checked == true){
-    enableMinusButton();
-  }
-})
 ```
+
 ### Rimozione zoom su mobile e tablet
 
 Per quanto riguarda la versione mobile ho voluto rimuovere lo zoom con il doppio click sullo schermo perchè utilizzando i bottoni velocemente si va incontro al fastidioso caso in cui si fa lo zoom sullo schermo e poi rende difficile l'utilizzo del counter, tramite questa semplice aggiunta nel css si risolve questa problematica.
