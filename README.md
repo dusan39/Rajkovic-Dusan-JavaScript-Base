@@ -156,3 +156,7 @@ Per quanto riguarda la versione mobile ho voluto rimuovere lo zoom con il doppio
     touch-action: manipulation;
   }
 ```
+
+### Link Counter
+
+https://dusan39.github.io/Rajkovic-Dusan-JavaScript-Base/
