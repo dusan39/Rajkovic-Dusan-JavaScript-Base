@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Default CSS Rules */
 * {
   margin: 0;
@@ -137,15 +136,15 @@ body {
   #counter-container {
     margin-top: 30%;
   }
-  #counter-container à buttons-container #display-counter-container {
+  #counter-container #buttons-container #display-counter-container {
     width: 180px;
   }
-  #counter-container à buttons-container #display-counter-container #counter-display {
+  #counter-container #buttons-container #display-counter-container #counter-display {
     font-size: 24px;
     height: 70px;
   }
-  #counter-container à buttons-container #plus-button,
-#counter-container à buttons-container #minus-button {
+  #counter-container #buttons-container #plus-button,
+#counter-container #buttons-container #minus-button {
     display: flex;
     justify-content: center;
     font-size: 20px;
