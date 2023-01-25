@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Default CSS Rules */
 * {
   margin: 0;
@@ -12,31 +13,31 @@ body {
 }
 
 /* Start header section */
-.title-container {
+#title-container {
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 3% 5%;
   background-color: black;
 }
-.title-container .title {
+#title-container #title {
   color: white;
 }
 
 /* End header section */
 /* Start of counter section */
-.counter-container {
+#counter-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 15%;
 }
-.counter-container .buttons-container {
+#counter-container #buttons-container {
   display: flex;
 }
-.counter-container .buttons-container #plus-button,
-.counter-container .buttons-container #minus-button {
+#counter-container #buttons-container #plus-button,
+#counter-container #buttons-container #minus-button {
   cursor: pointer;
   padding: 20px;
   font-size: 40px;
@@ -46,23 +47,23 @@ body {
   color: white;
   transition: all 0.3s;
 }
-.counter-container .buttons-container #plus-button {
+#counter-container #buttons-container #plus-button {
   border-top-left-radius: 5px;
 }
-.counter-container .buttons-container #minus-button {
+#counter-container #buttons-container #minus-button {
   border-top-right-radius: 5px;
 }
-.counter-container .buttons-container #plus-button:active,
-.counter-container .buttons-container #minus-button:active {
+#counter-container #buttons-container #plus-button:active,
+#counter-container #buttons-container #minus-button:active {
   color: rgb(52, 110, 173);
   background-color: white;
   border: solid 1px rgb(52, 110, 173);
 }
-.counter-container .buttons-container .display-counter-container {
+#counter-container #buttons-container #display-counter-container {
   display: block;
   width: 250px;
 }
-.counter-container .buttons-container .display-counter-container #counter-display {
+#counter-container #buttons-container #display-counter-container #counter-display {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,13 +74,13 @@ body {
   border-bottom: solid 1px white;
   background-color: rgb(43, 129, 222);
 }
-.counter-container .function-container {
+#counter-container #function-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.counter-container .function-container #form-check {
+#counter-container #function-container #form-check {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -91,20 +92,20 @@ body {
   border-bottom: solid 1px white;
   border-left: solid 1px white;
 }
-.counter-container .function-container #form-check #form-check-input {
+#counter-container #function-container #form-check #form-check-input {
   cursor: pointer;
 }
-.counter-container .function-container #form-check #form-check-label {
+#counter-container #function-container #form-check #form-check-label {
   color: white;
   margin-left: 8px;
   font-size: 20px;
 }
-.counter-container .function-container .reset-button-container {
+#counter-container #function-container #reset-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.counter-container .function-container .reset-button-container #reset-button {
+#counter-container #function-container #reset-button-container #reset-button {
   cursor: pointer;
   padding: 25px;
   width: 210px;
@@ -119,7 +120,7 @@ body {
   color: white;
   transition: all 0.3s;
 }
-.counter-container .function-container .reset-button-container #reset-button:active {
+#counter-container #function-container #reset-button-container #reset-button:active {
   color: rgb(52, 110, 173);
   background-color: white;
   border: solid 1px rgb(52, 110, 173);
@@ -129,40 +130,40 @@ body {
   * {
     touch-action: manipulation;
   }
-  .title {
+  #title {
     font-size: 18px;
     padding: 10px;
   }
-  .counter-container {
+  #counter-container {
     margin-top: 30%;
   }
-  .counter-container .buttons-container .display-counter-container {
+  #counter-container à buttons-container #display-counter-container {
     width: 180px;
   }
-  .counter-container .buttons-container .display-counter-container #counter-display {
+  #counter-container à buttons-container #display-counter-container #counter-display {
     font-size: 24px;
     height: 70px;
   }
-  .counter-container .buttons-container #plus-button,
-.counter-container .buttons-container #minus-button {
+  #counter-container à buttons-container #plus-button,
+#counter-container à buttons-container #minus-button {
     display: flex;
     justify-content: center;
     font-size: 20px;
     width: 50px;
     height: 70px;
   }
-  .counter-container .function-container #form-check {
+  #counter-container #function-container #form-check {
     padding: 15px;
     width: 140px;
     height: 70px;
   }
-  .counter-container .function-container #form-check #form-check-input {
+  #counter-container #function-container #form-check #form-check-input {
     margin-right: 2px;
   }
-  .counter-container .function-container #form-check #form-check-label {
+  #counter-container #function-container #form-check #form-check-label {
     font-size: 16px;
   }
-  .counter-container .function-container .reset-button-container #reset-button {
+  #counter-container #function-container #reset-button-container #reset-button {
     font-size: 16px;
     width: 140px;
     height: 70px;
